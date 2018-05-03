@@ -21,6 +21,9 @@ import com.example.irmin.myapplication.R;
 
 import org.json.JSONObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class EventRegisterActivity extends AppCompatActivity{
 
 

@@ -25,7 +25,9 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -50,7 +52,6 @@ public class EventFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
 
         SharedPreferences pref;
         pref = this.getActivity().getSharedPreferences("sharedID", Context.MODE_PRIVATE);
@@ -88,8 +89,34 @@ public class EventFragment extends Fragment {
             super.onPostExecute(result);
             progressDialog.dismiss();
             myJSON = result;
-            showList();
+
+            // 시스템으로부터 현재시간(ms) 가져오기
+            long now = System.currentTimeMillis();
+            // Data 객체에 시간을 저장한다.
+            Date date = new Date(now);
+            // 각자 사용할 포맷을 정하고 문자열로 만든다.
+            SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+            String strNow = sdfNow.format(date);
+
+            try {
+                SimpleDateFormat origin_format = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+                Date date_s = origin_format.parse(TAG_START);
+                Date date_c = origin_format.parse(TAG_CLOSE);
+                Date date_now = origin_format.parse(strNow);
+
+                int a = date_now.compareTo(date_s);
+                int b = date_now.compareTo(date_c);
+                if (a >= 0 && b < 0) {
+                    //시작시간 <= 현재시간 < 마지막시간
+                    showList();
+                } else {
+
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
 
         @Override
         protected String doInBackground(String... params) {

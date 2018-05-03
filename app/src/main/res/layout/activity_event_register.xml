@@ -54,32 +54,24 @@
             android:layout_gravity="center"
             android:orientation="horizontal">
 
-            <Button
-            android:id="@+id/Timer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_toStartOf="@+id/timer2"
-            android:layout_weight="1"
-            android:onClick="Move_Start"
-            android:text="시작시간설정" />
-
-                <TextView
-                    android:id="@+id/date1"
+                <Button
+                    android:id="@+id/Timer"
                     android:layout_width="wrap_content"
-                    android:layout_height="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_toStartOf="@+id/timer2"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="" />
+                    android:onClick="Move_Start"
+                    android:text="시작시간설정" />
 
                 <TextView
                     android:id="@+id/start_Time"
-                    android:layout_width="32dp"
+                    android:layout_width="77dp"
                     android:layout_height="30dp"
                     android:layout_above="@+id/Timer"
                     android:layout_alignStart="@+id/Timer"
                     android:layout_weight="1"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:text="" />
 
             </LinearLayout>
@@ -102,21 +94,13 @@
             android:text="종료시간설정" />
 
                 <TextView
-                    android:id="@+id/date2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="" />
-
-                <TextView
                     android:id="@+id/close_Time"
-                    android:layout_width="32dp"
+                    android:layout_width="77dp"
                     android:layout_height="30dp"
                     android:layout_above="@+id/Timer"
                     android:layout_alignStart="@+id/timer2"
                     android:layout_weight="1"
-                    android:gravity="left"
+                    android:gravity="center"
                     android:text="" />
             </LinearLayout>
             <!--<EditText-->
