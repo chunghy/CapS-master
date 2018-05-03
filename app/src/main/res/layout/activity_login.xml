@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_login"
+    android:background="#c0c0c0"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="356dp"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="114dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="이벤트를 등록해주실\n업주님들을 위한 앱입니다."
+                android:textColor="#000000"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/idText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="#ffffff"
+                android:hint="아이디를 입력해 주세요"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textColorHint="#d3d3d3"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/passwordText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:hint="비밀번호"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textColorHint="#d3d3d3"
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:background="#1e90ff"
+                android:onClick="onLoginButtonClicked"
+                android:text="로그인"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:textStyle="" />
+
+            <Button
+                android:id="@+id/registerButton"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="#000000"
+                android:onClick="onRegisterButtonClicked"
+                android:text="회원가입"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

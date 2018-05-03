@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category">
+        <item>식당</item>
+        <item>숙박</item>
+        <item>오락</item>
+    </string-array>
+    <string-array name="areaname">
+        <item>서울</item>
+        <item>제주</item>
+    </string-array>
+    <string-array name="제주">
+        <item>제주시</item>
+        <item>서귀포시</item>
+    </string-array>
+    <string-array name="서울">
+        <item>종로구</item>
+        <item>중구</item>
+        <item>용산구</item>
+    </string-array>
+    <string-array name="제주시">
+        <item>일도1동</item>
+        <item>일도2동</item>
+        <item>이도1동</item>
+        <item>이도2동</item>
+        <item>삼도1동</item>
+        <item>삼도2동</item>
+        <item>건입동</item>
+        <item>용담1동</item>
+        <item>용담2동</item>
+        <item>용담3동</item>
+        <item>화북1동</item>
+        <item>화북2동</item>
+        <item>삼양1동</item>
+        <item>삼양2동</item>
+        <item>삼양3동</item>
+        <item>봉개동</item>
+        <item>아라1동</item>
+        <item>아라2동</item>
+        <item>오라1동</item>
+        <item>오라2동</item>
+        <item>오라3동</item>
+        <item>노형동</item>
+        <item>연동</item>
+        <item>이호1동</item>
+        <item>이호2동</item>
+        <item>도두1동</item>
+        <item>도두2동</item>
+    </string-array>
+    <string-array name="서귀포시">
+        <item>a</item>
+        <item>b</item>
+        <item>c</item>
+    </string-array>
+
+</resources>

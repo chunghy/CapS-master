@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/event_list"
+    android:background="#ffffff"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/event_title"
+                android:layout_width="320dp"
+                android:layout_height="46dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:hint="이벤트 제목을 입력해주세요."
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textColorHint="#d3d3d3"
+                android:textSize="17dp" />
+
+            <EditText
+                android:id="@+id/event_content"
+                android:layout_width="320dp"
+                android:layout_height="173dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/border"
+                android:hint="이벤트 내용을 입력해주세요."
+                android:padding="5dp"
+                android:singleLine="false"
+                android:textColor="#000000"
+                android:textColorHint="#d3d3d3"
+                android:textSize="17dp" />
+
+            <LinearLayout
+            android:layout_width="320dp"
+            android:layout_marginTop="15dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+            android:id="@+id/Timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toStartOf="@+id/timer2"
+            android:layout_weight="1"
+            android:onClick="Move_Start"
+            android:text="시작시간설정" />
+
+                <TextView
+                    android:id="@+id/date1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/start_Time"
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:layout_above="@+id/Timer"
+                    android:layout_alignStart="@+id/Timer"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="" />
+
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+            android:id="@+id/timer2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/Timer"
+
+            android:layout_weight="1"
+            android:onClick="Move_End"
+            android:text="종료시간설정" />
+
+                <TextView
+                    android:id="@+id/date2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
+                    android:id="@+id/close_Time"
+                    android:layout_width="32dp"
+                    android:layout_height="30dp"
+                    android:layout_above="@+id/Timer"
+                    android:layout_alignStart="@+id/timer2"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text="" />
+            </LinearLayout>
+            <!--<EditText-->
+                <!--android:id="@+id/start_Time"-->
+                <!--android:layout_width="320dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="#ffffff"-->
+                <!--android:hint="시작시간."-->
+                <!--android:inputType="textPassword"-->
+                <!--android:padding="5dp"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textColorHint="#d3d3d3"-->
+                <!--android:textSize="17dp" />-->
+
+            <!--<EditText-->
+                <!--android:id="@+id/close_Time"-->
+                <!--android:layout_width="320dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="center"-->
+                <!--android:layout_marginTop="10dp"-->
+                <!--android:background="#ffffff"-->
+                <!--android:hint="종료시간."-->
+                <!--android:inputType="textPassword"-->
+                <!--android:padding="5dp"-->
+                <!--android:textColor="#000000"-->
+                <!--android:textColorHint="#d3d3d3"-->
+                <!--android:textSize="17dp" />-->
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/checkAmount"
+                    android:layout_width="180dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="선착순" />
+
+                <EditText
+                    android:id="@+id/amount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="5dp"
+                    android:hint="인원수를 입력하세요."
+                    android:textColor="#000000"
+                    android:textColorHint="#d3d3d3"
+                    android:textSize="17dp"
+                    android:background="#ffffff" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/loginId"
+                android:layout_width="wrap_content"
+                android:layout_height="5dp"
+                android:text=""
+                android:textColor="#ffffff" />
+
+            <EditText
+                android:id="@+id/eventImgText"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#ffffff"
+                android:hint="이미지를 선택하세요."
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:textColor="#000000"
+                android:textColorHint="#d3d3d3"
+                android:textSize="17dp" />
+
+            <Button
+                android:id="@+id/eventRegisterButton"
+                android:layout_width="320dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="#000000"
+                android:text="추가하기"
+                android:textColor="#ffffff"
+                android:textSize="17dp"
+                android:textStyle="" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
