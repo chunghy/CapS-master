@@ -6,8 +6,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Fragment;
-//import android.support.v4.app.Fragment;
-import android.preference.PreferenceManager;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,8 +23,11 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
+
 
 
 public class EventEndFragment extends Fragment {
@@ -40,6 +42,12 @@ public class EventEndFragment extends Fragment {
     private static final String TAG_AMOUNT = "amount";
     private static final String TAG_IMG = "eventImg";
 
+    long now = System.currentTimeMillis()+32400000;
+
+    SimpleDateFormat sdfNow = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    String strNow = sdfNow.format(new Date(now));
+
+
     ArrayList<HashMap<String, String>> eventList;
     ListView list;
     String myJSON;
@@ -47,8 +55,10 @@ public class EventEndFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
+        getActivity().setTitle("종료된 이벤트");
+
         SharedPreferences pref;
-        pref = this.getActivity().getSharedPreferences("sharedID",Context.MODE_PRIVATE);
+        pref = this.getActivity().getSharedPreferences("sharedID", Context.MODE_PRIVATE);
         String user_Id = pref.getString("sharedID","");
 
         String userID = user_Id.toString();
@@ -59,7 +69,7 @@ public class EventEndFragment extends Fragment {
 
         GetData task = new GetData();
         try {
-            task.execute("http://irmin95.cafe24.com/EventList5.php?userID=" + URLEncoder.encode(userID,"UTF-8"));
+            task.execute("http://irmin95.cafe24.com/EventListEnd.php?userID=" + URLEncoder.encode(userID,"UTF-8") + "&now=" +URLEncoder.encode(strNow,"UTF-8"));
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -160,8 +170,8 @@ public class EventEndFragment extends Fragment {
 
             ListAdapter adapter = new SimpleAdapter(
                     getActivity(), eventList, R.layout.event,
-                    new String[]{TAG_ID, TAG_TITLE, TAG_CONTENT, TAG_START, TAG_CLOSE},
-                    new int[]{R.id.userID, R.id.eventTitle, R.id.eventContent, R.id.startTime, R.id.closeTime}
+                    new String[]{TAG_TITLE, TAG_CONTENT, TAG_START, TAG_CLOSE},
+                    new int[]{R.id.eventTitle, R.id.eventContent, R.id.startTime, R.id.closeTime}
             );
 
 

@@ -9,6 +9,12 @@
     tools:context="com.example.irmin.myapplication.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
+    <FrameLayout
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+    </FrameLayout>
+
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.irmin.myapplication.EventFragment"

@@ -20,6 +20,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.irmin.myapplication.R;
 
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -28,12 +29,13 @@ public class EventRegisterActivity extends AppCompatActivity{
 
 
     private AlertDialog dialog;
-    FragmentManager fragmentManager = getFragmentManager();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_register);
+
+        setTitle("이벤트 추가하기");
 
         final TextView loginId = (TextView) findViewById(R.id.loginId);
 
@@ -43,11 +45,12 @@ public class EventRegisterActivity extends AppCompatActivity{
 
         final EditText event_title = (EditText) findViewById(R.id.event_title);
         final EditText event_content = (EditText) findViewById(R.id.event_content);
+        final TextView start_Date = (TextView) findViewById(R.id.start_Date);
+        final TextView close_Date = (TextView) findViewById(R.id.close_Date);
         final TextView start_Time = (TextView) findViewById(R.id.start_Time);
         final TextView close_Time = (TextView) findViewById(R.id.close_Time);
         final EditText amountNum = (EditText) findViewById(R.id.amount);
         final EditText eventImgText = (EditText) findViewById(R.id.eventImgText);
-
 
         final CheckBox checkAmount = (CheckBox) findViewById(R.id.checkAmount);
 
@@ -77,8 +80,8 @@ public class EventRegisterActivity extends AppCompatActivity{
                 String userID = loginId.getText().toString();
                 String eventTitle = event_title.getText().toString();
                 String eventContent = event_content.getText().toString();
-                String startTime = start_Time.getText().toString();
-                String closeTime = close_Time.getText().toString();
+                String startTime = start_Date.getText().toString() + " " + start_Time.getText().toString();
+                String closeTime = close_Date.getText().toString() + " " + close_Time.getText().toString();
                 String amount = amountNum.getText().toString();
                 String eventImg = eventImgText.getText().toString();
 
@@ -137,13 +140,13 @@ public class EventRegisterActivity extends AppCompatActivity{
     }
 
     public void Move_Start(View view) {
-        TimePickerFragment mTimePickerFragment = new TimePickerFragment();
-        mTimePickerFragment.show(getFragmentManager(), "TimePicker");
+        DatePickerFragment mDatePickerFragment = new DatePickerFragment();
+        mDatePickerFragment.show(getFragmentManager(), "DatePicker");
     }
 
     public void Move_End(View view) {
-        TimePickerFragmentEnd mTimePickerFragmentEnd = new TimePickerFragmentEnd();
-        mTimePickerFragmentEnd.show(getFragmentManager(), "TimePicker");
+        DatePickerFragmentEnd mDatePickerFragment = new DatePickerFragmentEnd();
+        mDatePickerFragment.show(getFragmentManager(), "DatePicker");
     }
 
 }

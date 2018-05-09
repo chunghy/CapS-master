@@ -60,11 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
                             if(success) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
-                                dialog = builder.setMessage("로그인에 성공했습니다.")
-                                        .setPositiveButton("확인", null)
-                                        .create();
-                                dialog.show();
                                 SharedPreferences.Editor editor = pref.edit();
                                 editor.putString("sharedID", idText.getText().toString());
                                 editor.putString("sharedPassword", passwordText.getText().toString());

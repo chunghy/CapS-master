@@ -36,7 +36,7 @@
             <EditText
                 android:id="@+id/event_content"
                 android:layout_width="320dp"
-                android:layout_height="173dp"
+                android:layout_height="145dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/border"
@@ -48,11 +48,10 @@
                 android:textSize="17dp" />
 
             <LinearLayout
-            android:layout_width="320dp"
-            android:layout_marginTop="15dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+                android:layout_width="320dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/Timer"
@@ -65,42 +64,58 @@
                     android:text="시작시간설정" />
 
                 <TextView
+                    android:id="@+id/start_Date"
+                    android:layout_width="57dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="" />
+
+                <TextView
                     android:id="@+id/start_Time"
                     android:layout_width="77dp"
                     android:layout_height="30dp"
                     android:layout_above="@+id/Timer"
                     android:layout_alignStart="@+id/Timer"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:text="" />
 
             </LinearLayout>
 
             <LinearLayout
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
+                android:layout_width="320dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
 
-            <Button
-            android:id="@+id/timer2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/Timer"
+                <Button
+                    android:id="@+id/timer2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignTop="@+id/Timer"
 
-            android:layout_weight="1"
-            android:onClick="Move_End"
-            android:text="종료시간설정" />
+                    android:layout_weight="1"
+                    android:onClick="Move_End"
+                    android:text="종료시간설정" />
+
+                <TextView
+                    android:id="@+id/close_Date"
+                    android:layout_width="57dp"
+                    android:layout_height="30dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="" />
 
                 <TextView
                     android:id="@+id/close_Time"
                     android:layout_width="77dp"
                     android:layout_height="30dp"
-                    android:layout_above="@+id/Timer"
+                    android:layout_above="@+id/timer2"
                     android:layout_alignStart="@+id/timer2"
                     android:layout_weight="1"
-                    android:gravity="center"
+                    android:gravity="left"
                     android:text="" />
             </LinearLayout>
             <!--<EditText-->

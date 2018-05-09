@@ -55,9 +55,10 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_EditInfo) {
-            // Handle the camera action
-        } else if (id == R.id.nav_Ing) {
+//        if (id == R.id.nav_EditInfo) {
+//            // Handle the camera action
+//        } else
+        if (id == R.id.nav_Ing) {
             frg = new EventFragment();
             FragmentManager fm =getFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
